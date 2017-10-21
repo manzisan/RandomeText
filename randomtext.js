@@ -16,7 +16,7 @@ window.onload = function() {
     inName.innerHTML += "<span class='namebox'></span>";
   }
 
-  function randomChange() {
+  var randomChange = () => {
     for (var i = 0; i < myName.length; i++) {
       var random = Math.floor( Math.random() * 22 );
       if(flag) {
@@ -32,7 +32,7 @@ window.onload = function() {
     }
   }
 
-  function setName() {
+  var setName = () => {
     var random = Math.floor( Math.random() * myName.length );
     nameBox[nameNum].innerHTML = myName[nameNum];
     nameNum++;
