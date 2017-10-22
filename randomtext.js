@@ -1,4 +1,5 @@
 window.onload = function() {
+
   var flag = false;
   var nameNum = 0;
   var inName = document.getElementById('inName');
@@ -18,11 +19,10 @@ window.onload = function() {
 
   var randomChange = () => {
     for (var i = 0; i < myName.length; i++) {
-      var random = Math.floor( Math.random() * 22 );
+      var random = Math.floor( Math.random() * abc.length );
       if(flag) {
         nameBox[i].innerHTML = abc[random];
-      }
-      if(!flag) {
+      } else {
         try {
           nameBox[nameNum + i].innerHTML = abc[random];
         } catch(e) {
@@ -37,7 +37,7 @@ window.onload = function() {
     nameBox[nameNum].innerHTML = myName[nameNum];
     nameNum++;
     // if end of random change logic
-    if (nameNum == myName.length) {
+    if (nameNum === myName.length) {
       flag = "";
       return;
     }
@@ -46,4 +46,5 @@ window.onload = function() {
 
   setInterval(randomChange,50);
   setName();
+
 }
